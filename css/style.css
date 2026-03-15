@@ -773,58 +773,98 @@ body::before {
     max-width: 65ch;
 }
 
-/* ===== Education table ===== */
-.education-section .table-wrap {
-    overflow-x: auto;
-    border-radius: var(--radius);
-    border: 1px solid var(--border);
-    background: var(--bg-card);
-    box-shadow: var(--shadow);
-    transition: box-shadow var(--transition), border-color var(--transition);
+/* ===== Education timeline ===== */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+    max-width: 640px;
 }
 
-.education-section .table-wrap:hover {
-    border-color: rgba(0, 229, 184, 0.25);
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    bottom: 0.5rem;
+    width: 2px;
+    background: linear-gradient(180deg, var(--accent), var(--border), var(--accent));
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+.timeline-node {
+    position: relative;
+    padding-bottom: 2.5rem;
+}
+
+.timeline-node:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -2rem;
+    top: 0.4rem;
+    width: 14px;
+    height: 14px;
+    margin-left: -6px;
+    background: var(--bg-card);
+    border: 3px solid var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px var(--bg), 0 0 16px var(--accent-glow);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+
+.timeline-node:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 2px var(--bg), 0 0 24px var(--accent-glow);
+}
+
+.timeline-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.75rem;
+    margin-left: 1rem;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.timeline-node:hover .timeline-card {
+    border-color: rgba(0, 229, 184, 0.3);
     box-shadow: var(--shadow), 0 0 0 1px rgba(0, 229, 184, 0.08);
 }
 
-.education-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.95rem;
-}
-
-.education-table th,
-.education-table td {
-    padding: 1rem 1.25rem;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-}
-
-.education-table th {
-    background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+.timeline-year {
+    display: inline-block;
+    font-size: 0.8rem;
     font-weight: 600;
-    color: var(--text);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
+    font-family: var(--font-mono);
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
 }
 
-.education-table td {
+.timeline-institution {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.01em;
+}
+
+.timeline-degree {
+    font-size: 0.95rem;
     color: var(--text-muted);
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
 }
 
-.education-table tbody tr:last-child td {
-    border-bottom: none;
-}
-
-.education-table tbody tr {
-    transition: background var(--transition), color var(--transition);
-}
-
-.education-table tbody tr:hover td {
-    background: var(--accent-dim);
-    color: var(--text);
+.timeline-result {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0;
+    font-family: var(--font-mono);
 }
 
 /* ===== Skills ===== */
@@ -1210,10 +1250,19 @@ body::before {
         margin: 0 auto;
     }
 
-    .education-table th,
-    .education-table td {
-        padding: 0.75rem;
-        font-size: 0.85rem;
+    .timeline {
+        padding-left: 1.75rem;
+    }
+
+    .timeline-dot {
+        width: 12px;
+        height: 12px;
+        margin-left: -5px;
+    }
+
+    .timeline-card {
+        padding: 1.25rem 1.35rem;
+        margin-left: 0.75rem;
     }
 
     .soft-skills-list {
@@ -1270,12 +1319,16 @@ body::before {
         min-height: 240px;
     }
 
-    .education-table {
-        font-size: 0.8rem;
+    .timeline-card {
+        padding: 1rem 1.15rem;
     }
 
-    .education-table th,
-    .education-table td {
-        padding: 0.5rem;
+    .timeline-institution {
+        font-size: 1.05rem;
+    }
+
+    .timeline-degree,
+    .timeline-result {
+        font-size: 0.85rem;
     }
 }
