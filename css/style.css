@@ -1139,7 +1139,7 @@ body::before {
 }
 
 .contact-side-heading {
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     font-weight: 700;
     color: var(--accent);
     margin: 0 0 1rem 0;
