@@ -219,7 +219,7 @@
         var btn = document.querySelector('.scroll-top');
         if (!btn) return;
         function updateVisibility() {
-            if (window.scrollY > 400) {
+            if (window.scrollY > 200) {
                 btn.classList.add('visible');
             } else {
                 btn.classList.remove('visible');
@@ -243,7 +243,7 @@
             hideLoader();
             return;
         }
-        var minLoaderTime = 2000;
+        var minLoaderTime = 600;
         var start = Date.now();
         function hideLoaderFirstTime() {
             sessionStorage.setItem('loaderShown', '1');
