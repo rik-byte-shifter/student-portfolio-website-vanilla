@@ -232,9 +232,29 @@
         });
     }
 
-    // ----- Page load animation -----
+    // ----- Page load animation & loading screen (first visit only) -----
     function initPageLoad() {
-        document.body.classList.add('page-loaded');
+        var alreadyShown = sessionStorage.getItem('loaderShown');
+        function hideLoader() {
+            document.body.classList.add('page-loaded');
+        }
+        if (alreadyShown) {
+            document.documentElement.classList.add('loader-already-shown');
+            hideLoader();
+            return;
+        }
+        var minLoaderTime = 1500;
+        var start = Date.now();
+        function hideLoaderFirstTime() {
+            sessionStorage.setItem('loaderShown', '1');
+            hideLoader();
+        }
+        var elapsed = Date.now() - start;
+        if (elapsed >= minLoaderTime) {
+            hideLoaderFirstTime();
+        } else {
+            setTimeout(hideLoaderFirstTime, minLoaderTime - elapsed);
+        }
     }
 
     if (document.readyState === 'loading') {

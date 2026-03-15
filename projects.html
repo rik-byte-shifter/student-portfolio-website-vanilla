@@ -10,6 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+    (function(){ if (sessionStorage.getItem('loaderShown')) { document.documentElement.classList.add('loader-already-shown'); } })();
+    </script>
+    <!-- Loading screen (from Uiverse.io by ashish-yadv) -->
+    <div class="page-loader" id="page-loader" aria-hidden="true">
+        <ul class="loader">
+            <li class="ball"></li>
+            <li class="ball"></li>
+            <li class="ball"></li>
+        </ul>
+    </div>
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
             <a href="index.html" class="nav-logo">Portfolio</a>
