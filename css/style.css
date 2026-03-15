@@ -1248,25 +1248,19 @@ a.contact-info-value:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: var(--radius-sm);
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    padding: 0.25rem;
     color: var(--text-muted);
-    transition: color var(--transition), border-color var(--transition), background var(--transition), transform var(--transition);
+    transition: opacity var(--transition), transform var(--transition);
 }
 
 .social-link:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: var(--accent-dim);
+    opacity: 0.85;
     transform: translateY(-2px);
 }
 
 .social-icon {
-    width: 22px;
-    height: 22px;
+    width: 36px;
+    height: 36px;
 }
 
 .social-link img.social-icon {
