@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Student Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" aria-label="Toggle menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button type="button" class="theme-toggle" aria-label="Toggle theme">Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main page-content">
+        <section class="projects-section">
+            <h1 class="reveal">Projects & Experience</h1>
+            <p class="section-intro reveal reveal-delay-1">Selected projects built with HTML, CSS, and JavaScript.</p>
+
+            <article class="project-card reveal reveal-delay-2">
+                <h2>Personal Portfolio Website</h2>
+                <p>A multi-page portfolio site showcasing education, skills, and projects. Built with semantic HTML5, external CSS for responsive layout and theme support, and vanilla JavaScript for form validation and theme toggle. Fully responsive for desktop and mobile.</p>
+                <div class="project-tools">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-3">
+                <h2>Task Manager Web App</h2>
+                <p>A simple task list application where users can add, complete, and remove tasks. Data is stored in the browser using localStorage. The UI includes clear feedback and works on different screen sizes.</p>
+                <div class="project-tools">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>LocalStorage</span>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-copy">&copy; <span id="year"></span> Student Portfolio.</p>
+                <span class="footer-badge">CSE 3154 · Web Programming</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    <button type="button" class="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Student Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" aria-label="Toggle menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button type="button" class="theme-toggle" aria-label="Toggle theme">Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main home-page">
+        <section class="hero">
+            <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+            <div class="hero-orb hero-orb-3" aria-hidden="true"></div>
+            <p class="hero-status"><span class="hero-status-dot"></span> Available for projects</p>
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Ranesh Das Rik</h1>
+            <p class="hero-role">Web Developer & Student</p>
+            <p class="hero-welcome">Welcome to my portfolio. Here you'll find my projects, skills, and journey in web development. Explore and get in touch.</p>
+            <div class="hero-cta">
+                <a href="about.html" class="btn btn-primary">About Me</a>
+                <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-copy">&copy; <span id="year"></span> Student Portfolio.</p>
+                <span class="footer-badge">CSE 3154 · Web Programming</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    <button type="button" class="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+    <script src="js/script.js"></script>
+</body>
+</html>

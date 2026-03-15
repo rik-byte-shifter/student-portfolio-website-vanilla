@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Student Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav" aria-label="Main navigation">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            <button class="nav-toggle" aria-label="Toggle menu" type="button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Me</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><button type="button" class="theme-toggle" aria-label="Toggle theme">Theme</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main page-content">
+        <section class="about-section">
+            <h1 class="reveal">About Me</h1>
+            <div class="about-grid">
+                <div class="about-photo-wrap reveal reveal-delay-1">
+                    <img src="images/profile.jpg" alt="Profile photo" class="about-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <div class="about-photo-placeholder" style="display: none;">Photo</div>
+                </div>
+                <div class="about-text reveal reveal-delay-2">
+                    <h2>Personal Details</h2>
+                    <p><strong>Name:</strong> Your Full Name</p>
+                    <p><strong>Location:</strong> Your City, Country</p>
+                    <p><strong>Email:</strong> your.email@example.com</p>
+                    <p><strong>Interests:</strong> Web development, design, technology</p>
+
+                    <h2>Career Goals</h2>
+                    <p>I aim to become a full-stack developer and build accessible, performant web applications. I am focused on learning modern frameworks after mastering the fundamentals and eventually contributing to open-source projects.</p>
+
+                    <h2>Biography</h2>
+                    <p class="bio">I am a student passionate about web programming and user experience. I started with HTML and CSS and have grown into JavaScript and responsive design. I believe in clean code, accessibility, and continuous learning. Outside of coding, I enjoy reading and exploring new technologies. I am currently completing my degree in Computer Science and Engineering and building projects to strengthen my portfolio. My goal is to create websites that are both beautiful and functional, and to keep improving with every project I build. I took my first steps in web development during high school and have since completed several courses and small projects. I am particularly interested in how design and code work together to create inclusive digital experiences. In the future I hope to contribute to open-source projects and work on products that make a positive impact. I am always eager to learn new tools and techniques and to connect with others who share the same passion for the web. This portfolio is one of my first complete multi-page projects, and I am excited to keep adding to it as I learn more.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>
+                <p class="footer-copy">&copy; <span id="year"></span> Student Portfolio.</p>
+                <span class="footer-badge">CSE 3154 · Web Programming</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </footer>
+    <button type="button" class="scroll-top" aria-label="Scroll to top" title="Scroll to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+    <script src="js/script.js"></script>
+</body>
+</html>
