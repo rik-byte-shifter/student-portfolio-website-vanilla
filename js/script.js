@@ -243,7 +243,7 @@
             hideLoader();
             return;
         }
-        var minLoaderTime = 1500;
+        var minLoaderTime = 2000;
         var start = Date.now();
         function hideLoaderFirstTime() {
             sessionStorage.setItem('loaderShown', '1');
