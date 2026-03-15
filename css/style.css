@@ -1269,6 +1269,10 @@ a.contact-info-value:hover {
     height: 22px;
 }
 
+.social-link img.social-icon {
+    object-fit: contain;
+}
+
 @media (max-width: 768px) {
     .contact-layout {
         grid-template-columns: 1fr;
