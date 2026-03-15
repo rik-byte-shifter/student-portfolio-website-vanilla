@@ -243,6 +243,57 @@
         initPageLoad();
     }
 
+    // ----- Hero role typewriter -----
+    function initHeroRoleRotator() {
+        var el = document.getElementById('hero-role-text');
+        if (!el) return;
+
+        var roles = [
+            'Web Developer & Student',
+            'Frontend Developer',
+            'UI / UX Enthusiast',
+            'Problem Solver',
+            'Creative Coder',
+            'Lifelong Learner'
+        ];
+
+        var index = 0;
+        var typeSpeed = 90;
+        var deleteSpeed = 50;
+        var pauseAtEnd = 1800;
+        var pauseAtStart = 600;
+
+        function typeWriter() {
+            var fullText = roles[index];
+            var i = 0;
+
+            function type() {
+                if (i < fullText.length) {
+                    el.textContent += fullText.charAt(i);
+                    i++;
+                    setTimeout(type, typeSpeed);
+                } else {
+                    setTimeout(deleteText, pauseAtEnd);
+                }
+            }
+
+            function deleteText() {
+                var current = el.textContent;
+                if (current.length > 0) {
+                    el.textContent = current.slice(0, -1);
+                    setTimeout(deleteText, deleteSpeed);
+                } else {
+                    index = (index + 1) % roles.length;
+                    setTimeout(typeWriter, pauseAtStart);
+                }
+            }
+
+            type();
+        }
+
+        setTimeout(typeWriter, 1200);
+    }
+
     // ----- Run all -----
     initTheme();
     initNavToggle();
@@ -252,4 +303,5 @@
     initScrollReveal();
     initRipples();
     initScrollTop();
+    initHeroRoleRotator();
 })();

@@ -325,10 +325,10 @@ body::before {
 }
 
 .hero-profile-img {
-    width: 280px;
-    height: 280px;
-    min-width: 280px;
-    min-height: 280px;
+    width: 360px;
+    height: 360px;
+    min-width: 360px;
+    min-height: 360px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid rgba(0, 229, 184, 0.3);
@@ -343,10 +343,10 @@ body::before {
 
 .hero-profile-placeholder {
     display: none;
-    width: 280px;
-    height: 280px;
-    min-width: 280px;
-    min-height: 280px;
+    width: 360px;
+    height: 360px;
+    min-width: 360px;
+    min-height: 360px;
     border-radius: 50%;
     background: var(--bg-elevated);
     border: 3px dashed var(--border);
@@ -479,11 +479,109 @@ body::before {
 }
 
 .hero-role {
-    font-size: 1.3rem;
-    color: var(--text-muted);
+    font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+    font-weight: 700;
     margin-bottom: 1.5rem;
+    min-height: 1.8em;
     opacity: 0;
     animation: fadeUp 0.7s 0.3s ease forwards;
+    letter-spacing: 0.02em;
+}
+
+.hero-role-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    padding: 0.45rem 1rem 0.5rem;
+    border-radius: 999px;
+    background: rgba(0, 229, 184, 0.08);
+    border: 1px solid rgba(0, 229, 184, 0.25);
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1) inset;
+}
+
+.hero-role-text {
+    display: inline-block;
+    color: var(--text);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+}
+
+.hero-role-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    margin-left: 3px;
+    background: var(--accent);
+    border-radius: 1px;
+    animation: cursorBlink 0.8s step-end infinite;
+    vertical-align: text-bottom;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* ----- Hero role style: Gradient (teal → purple) ----- */
+.hero-role.style-gradient .hero-role-wrap {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.hero-role.style-gradient .hero-role-text {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ----- Hero role style: Underline (clean text + accent line) ----- */
+.hero-role.style-underline .hero-role-wrap {
+    padding: 0 0 0.25rem;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid var(--accent);
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.hero-role.style-underline .hero-role-text {
+    color: var(--text);
+}
+
+/* ----- Hero role style: Glow (gradient + soft glow) ----- */
+.hero-role.style-glow .hero-role-wrap {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.hero-role.style-glow .hero-role-text {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 40px rgba(0, 229, 184, 0.3);
+    filter: drop-shadow(0 0 12px rgba(0, 229, 184, 0.25));
+}
+
+/* ----- Hero role style: Orange / warm (different color) ----- */
+.hero-role.style-warm .hero-role-wrap {
+    background: rgba(251, 146, 60, 0.1);
+    border-color: rgba(251, 146, 60, 0.35);
+}
+
+.hero-role.style-warm .hero-role-text {
+    color: var(--text);
+}
+
+.hero-role.style-warm .hero-role-cursor {
+    background: #fb923c;
 }
 
 .hero-welcome {
@@ -1148,10 +1246,10 @@ body::before {
 
     .hero-profile-img,
     .hero-profile-placeholder {
-        width: 220px;
-        height: 220px;
-        min-width: 220px;
-        min-height: 220px;
+        width: 280px;
+        height: 280px;
+        min-width: 280px;
+        min-height: 280px;
     }
 }
 
@@ -1166,10 +1264,10 @@ body::before {
 
     .hero-profile-img,
     .hero-profile-placeholder {
-        width: 180px;
-        height: 180px;
-        min-width: 180px;
-        min-height: 180px;
+        width: 240px;
+        height: 240px;
+        min-width: 240px;
+        min-height: 240px;
     }
 
     .education-table {
