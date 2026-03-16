@@ -1120,6 +1120,37 @@ body::before {
     gap: 0.35rem;
 }
 
+.skill-top {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.skill-logo {
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-sm, 6px);
+    overflow: hidden;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+}
+
+.skill-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 2px;
+}
+
+.skill-label {
+    flex: 1;
+    min-width: 0;
+}
+
 .skill-item:nth-child(1) .skill-fill { transition-delay: 0.1s; }
 .skill-item:nth-child(2) .skill-fill { transition-delay: 0.2s; }
 .skill-item:nth-child(3) .skill-fill { transition-delay: 0.3s; }
