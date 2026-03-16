@@ -1187,6 +1187,122 @@ body::before {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* Tools & Software grid */
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 1.35rem;
+    margin-bottom: 1.75rem;
+}
+
+.tool-card {
+    background: radial-gradient(circle at top left, rgba(0, 229, 184, 0.12), transparent 55%) var(--bg-card);
+    border-radius: 999px;
+    padding: 0.9rem 1.25rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    position: relative;
+    overflow: hidden;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition),
+        background var(--transition),
+        border-color var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.tool-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(0, 229, 184, 0.7), rgba(167, 139, 250, 0.7));
+    opacity: 0;
+    transition: opacity var(--transition);
+    pointer-events: none;
+}
+
+.tool-icon {
+    width: 46px;
+    height: 46px;
+    min-width: 46px;
+    min-height: 46px;
+    flex: 0 0 46px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(circle at 30% 0, rgba(0, 229, 184, 0.3), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(167, 139, 250, 0.22), transparent 60%),
+        var(--bg-elevated);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+.tool-icon img {
+    width: 66%;
+    height: 66%;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
+}
+
+/* Match non-square logo PNGs to the standard tool icon sizing */
+.tools-grid img[alt="Lightroom Classic icon"],
+.tools-grid img[alt="DaVinci Resolve icon"] {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: none;
+}
+
+.tool-name {
+    margin: 0;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: none;
+    color: var(--text);
+}
+
+.tool-card:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.65),
+        0 0 28px rgba(0, 229, 184, 0.35);
+    background:
+        radial-gradient(circle at top left, rgba(0, 229, 184, 0.18), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(167, 139, 250, 0.12), transparent 65%),
+        var(--bg-card);
+    border-color: rgba(0, 229, 184, 0.7);
+}
+
+.tool-card:hover::before {
+    opacity: 1;
+}
+
+.tool-icon,
+.tool-name {
+    transition: transform var(--transition), color var(--transition), box-shadow var(--transition);
+}
+
+.tool-card:hover .tool-icon {
+    transform: translateY(-1px) scale(1.05);
+    box-shadow:
+        0 10px 24px rgba(0, 0, 0, 0.7),
+        0 0 18px rgba(0, 229, 184, 0.4);
+}
+
+.tool-card:hover .tool-name {
+    color: var(--accent);
+}
+
 /* ===== Projects ===== */
 .projects-section .project-card {
     background: var(--bg-card);
