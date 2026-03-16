@@ -1109,9 +1109,9 @@ body::before {
 }
 
 .skill-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem 2rem;
 }
 
 .skill-item {
@@ -1158,6 +1158,12 @@ body::before {
 
 .skill-fill.animated {
     width: var(--fill-width, 0);
+}
+
+@media (max-width: 600px) {
+    .skill-bars {
+        grid-template-columns: 1fr;
+    }
 }
 
 .soft-skills-list {
