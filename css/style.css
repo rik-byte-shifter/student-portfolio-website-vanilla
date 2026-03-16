@@ -1252,14 +1252,21 @@ body::before {
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.7));
 }
 
-/* Match non-square logo PNGs to the standard tool icon sizing */
-.tools-grid img[alt="Lightroom Classic icon"],
+/* DaVinci Resolve: fill the circle like other round icons */
 .tools-grid img[alt="DaVinci Resolve icon"] {
     width: 100%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
     filter: none;
+}
+
+/* Lightroom Classic: keep it square like Photoshop */
+.tools-grid img[alt="Lightroom Classic icon"] {
+    width: 66%;
+    height: 66%;
+    border-radius: 0;
+    object-fit: contain;
 }
 
 .tool-name {
