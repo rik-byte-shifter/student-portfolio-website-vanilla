@@ -728,13 +728,14 @@ body::before {
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 2.5rem;
-    align-items: start;
+    align-items: stretch;
 }
 
 .about-photo-wrap {
     position: relative;
-    aspect-ratio: 1;
-    max-width: 280px;
+    aspect-ratio: 3 / 4;
+    max-width: 340px;
+    height: 100%;
     border-radius: var(--radius);
     overflow: hidden;
     background: linear-gradient(145deg, var(--bg-elevated), rgba(0, 229, 184, 0.08));
@@ -771,6 +772,7 @@ body::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top;
 }
 
 .about-photo-placeholder {
@@ -789,14 +791,14 @@ body::before {
     bottom: 0.9rem;
     display: flex;
     justify-content: space-between;
-    gap: 0.75rem;
-    padding: 0.6rem 0.7rem;
-    border-radius: var(--radius-pill);
+    gap: 0.9rem;
+    padding: 0.65rem 0.9rem;
+    border-radius: 18px;
     background: rgba(7, 7, 10, 0.9);
-    border: 1px solid rgba(0, 229, 184, 0.6);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
 .about-stat {
