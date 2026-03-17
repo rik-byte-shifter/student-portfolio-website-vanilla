@@ -269,12 +269,10 @@
         if (!el) return;
 
         var roles = [
-            'Web Developer & Student',
-            'Frontend Developer',
-            'UI / UX Enthusiast',
-            'Problem Solver',
-            'Creative Coder',
-            'Lifelong Learner'
+            'AI & IOT Systems Dev',
+            'ML & Embedded Enthusiast',
+            'Full-Stack Dev',
+            'Visual Storyteller',
         ];
 
         var index = 0;
