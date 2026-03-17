@@ -824,6 +824,7 @@ body::before {
 .reveal-delay-3 { transition-delay: 0.3s; }
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
 
 /* ===== Page content (shared) ===== */
 .page-content h1 {
@@ -1101,11 +1102,45 @@ body::before {
 
 /* ===== Skills ===== */
 .skills-subtitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-top: 2.25rem;
+    margin-bottom: 1.5rem;
     color: var(--text);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0.4rem 1.2rem;
+    border: 1.5px solid var(--text);
+    border-radius: 0;
+    background: transparent;
+}
+
+.skills-subtitle::before,
+.skills-subtitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff3b30;
+}
+
+.skills-subtitle::before {
+    left: -24px;
+}
+
+.skills-subtitle::after {
+    right: -24px;
 }
 
 .skill-bars {
@@ -1352,12 +1387,143 @@ body::before {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: var(--radius);
-    padding: 2rem;
+    padding: 1.5rem;
     margin-bottom: 1.5rem;
     box-shadow: var(--shadow);
     transition: border-color var(--transition), transform var(--transition-slow), box-shadow var(--transition);
     position: relative;
     overflow: hidden;
+}
+
+.project-body {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.project-content {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.project-media-stack {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.project-media-stack--sfml {
+    padding: 10px;
+    border: 1px solid rgba(0, 229, 184, 0.28);
+    border-radius: 12px;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0, 229, 184, 0.10), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08), transparent 60%),
+        var(--bg-elevated);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(167, 139, 250, 0.14);
+    width: 320px;
+    align-items: stretch;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-media-stack--sfml::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    box-shadow:
+        0 0 0 1px rgba(0, 229, 184, 0.12) inset,
+        0 0 0 1px rgba(167, 139, 250, 0.10) inset;
+    opacity: 1;
+}
+
+.project-media {
+    margin: 0;
+    flex: 0 0 220px;
+    width: 220px;
+    height: 150px;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(0, 229, 184, 0.10), transparent 55%),
+        radial-gradient(circle at 80% 80%, rgba(167, 139, 250, 0.08), transparent 60%),
+        var(--bg-elevated);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35);
+}
+
+.project-media--sfml {
+    flex: 1 1 0;
+    width: auto;
+    height: 260px;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.project-media:not(.project-media--double) img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-media--double {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    flex: 0 0 auto;
+    width: clamp(280px, 32vw, 440px);
+    height: clamp(220px, 26vw, 330px);
+}
+
+.project-media--double img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: var(--bg-elevated);
+}
+
+@media (max-width: 420px) {
+    .project-media--double {
+        grid-template-columns: 1fr;
+        width: 100%;
+        height: 190px;
+    }
+}
+
+/* Image polish (all project thumbnails) */
+.project-media img,
+.project-media--double img {
+    filter: saturate(1.05) contrast(1.03);
+    transform: translateZ(0);
+    transition: transform var(--transition-slow), filter var(--transition);
+}
+
+.projects-section .project-card:hover .project-media img,
+.projects-section .project-card:hover .project-media--double img {
+    transform: scale(1.04);
+    filter: saturate(1.12) contrast(1.06);
+}
+
+.project-media img {
+    transition: transform var(--transition-slow);
+}
+
+.projects-section .project-card:hover .project-media img {
+    transform: scale(1.03);
+}
+
+.projects-section .project-card:hover .project-media {
+    border-color: rgba(0, 229, 184, 0.35);
 }
 
 .projects-section .project-card::after {
@@ -1392,6 +1558,82 @@ body::before {
     color: var(--text-muted);
     margin: 0 0 1rem;
     line-height: 1.65;
+}
+
+.project-highlights {
+    margin: 0 0 1rem;
+    padding-left: 1.1rem;
+    color: var(--text);
+}
+
+.project-highlights li {
+    margin: 0.4rem 0;
+    color: var(--text-muted);
+}
+
+.project-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.project-log {
+    margin: 0 0 1rem;
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg-elevated);
+}
+
+.project-log summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.project-log[open] summary {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 700px) {
+    .project-body {
+        flex-direction: column;
+    }
+
+    .project-media-stack {
+        width: 100%;
+        max-width: 520px;
+        flex-direction: column;
+    }
+
+    .project-media-stack--sfml {
+        max-width: 320px;
+        flex-direction: row;
+    }
+
+    .project-media {
+        width: 100%;
+        max-width: 520px;
+        height: 190px;
+    }
+
+    .project-media--sfml {
+        width: auto;
+        height: 240px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-media-stack--sfml {
+        max-width: 100%;
+        flex-direction: column;
+    }
+
+    .project-media--sfml {
+        width: 100%;
+        height: 220px;
+    }
 }
 
 .project-tools {
