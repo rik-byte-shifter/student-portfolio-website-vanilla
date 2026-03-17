@@ -1293,11 +1293,50 @@ body::before {
 
 /* ===== Skills ===== */
 .skills-subtitle {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-top: 2.25rem;
+    margin-bottom: 1.5rem;
     color: var(--text);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+
+    position: relative;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 0.4rem 1.2rem;
+    border: 1.5px solid var(--text);
+    border-radius: 0;
+    background: transparent;
+}
+
+/* Extra spacing between the three Skills section titles */
+.skills-subtitle:not(:first-of-type) {
+    margin-top: 4.25rem;
+}
+
+.skills-subtitle::before,
+.skills-subtitle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff3b30;
+}
+
+.skills-subtitle::before {
+    left: -24px;
+}
+
+.skills-subtitle::after {
+    right: -24px;
 }
 
 .skill-bars {
