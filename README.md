@@ -111,6 +111,14 @@ Student_Portfolio_Website/
 
 ---
 
+## 🌐 Deploying to GitHub Pages
+
+1. **Push the full project** — Ensure the `css/`, `js/`, and `images/` folders (and all their files) are in the repo. If the site looks unstyled (white page, no CSS), the browser can’t find these assets; check that they’re committed and pushed.
+2. **Enable Pages** — In your repo: **Settings → Pages → Source**: choose your branch (e.g. `main`) and root, then save.
+3. **Open the site** — Use the URL GitHub gives you (e.g. `https://<username>.github.io/<repo-name>/`). Each HTML file includes `<base href="./">` so CSS, JS, and images load correctly from that URL.
+
+---
+
 ## 🎨 Customization
 
 - **Theme colors:** Edit CSS variables in `css/style.css` under `:root` (dark) and `[data-theme="light"]`.
