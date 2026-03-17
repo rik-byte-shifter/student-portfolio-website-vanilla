@@ -46,25 +46,65 @@
             <h1 class="reveal">Contact</h1>
             <p class="section-intro reveal reveal-delay-1">Send a message and I'll get back to you.</p>
 
-            <div id="form-success" class="form-success" role="status" aria-live="polite">Thank you! Your message has been sent. (Demo — no server configured.)</div>
-            <form id="contact-form" class="contact-form reveal reveal-delay-2" novalidate>
-                <div class="form-group">
-                    <label for="name">Name <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
-                    <span class="form-error" id="name-error" role="alert"></span>
+            <div class="contact-layout">
+                <div class="contact-left">
+                    <div id="form-success" class="form-success" role="status" aria-live="polite">Thank you! Your message has been sent. (Demo — no server configured.)</div>
+                    <form id="contact-form" class="contact-form reveal reveal-delay-2" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+                            <span class="form-error" id="name-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
+                            <span class="form-error" id="email-error" role="alert"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" required placeholder="Your message" rows="5"></textarea>
+                            <span class="form-error" id="message-error" role="alert"></span>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="your@email.com" autocomplete="email">
-                    <span class="form-error" id="email-error" role="alert"></span>
+                <div class="contact-right reveal reveal-delay-2">
+                    <div class="contact-info-block">
+                        <h2 class="contact-side-heading">Contact Info</h2>
+                        <ul class="contact-info-list">
+                            <li class="contact-info-item">
+                                <span class="contact-info-label">Email</span>
+                                <a href="mailto:rik.elysium@gmail.com" class="contact-info-value">rik.elysium@gmail.com</a>
+                            </li>
+                            <li class="contact-info-item">
+                                <span class="contact-info-label">Phone</span>
+                                <a href="tel:+8801779342695" class="contact-info-value">+8801779342695</a>
+                            </li>
+                            <li class="contact-info-item">
+                                <span class="contact-info-label">Location</span>
+                                <span class="contact-info-value">Rajshahi, Bangladesh</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="follow-me-block">
+                        <h2 class="contact-side-heading">Follow me</h2>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+                                <img src="images/social/linkedin1.png" alt="" class="social-icon" width="36" height="36">
+                            </a>
+                            <a href="https://github.com/rik-byte-shifter" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+                                <img src="images/social/github1.png" alt="" class="social-icon" width="36" height="36">
+                            </a>
+                            <a href="https://www.facebook.com/rik.das.078/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+                                <img src="images/social/facebook1.png" alt="" class="social-icon" width="36" height="36">
+                            </a>
+                            <a href="https://www.instagram.com/rik_blue/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+                                <img src="images/social/instagram1.png" alt="" class="social-icon" width="36" height="36">
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message <span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="Your message" rows="5"></textarea>
-                    <span class="form-error" id="message-error" role="alert"></span>
-                </div>
-                <button type="submit" class="btn btn-primary">Send Message</button>
-            </form>
+            </div>
         </section>
     </main>
 
