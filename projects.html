@@ -10,6 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+    (function(){ if (sessionStorage.getItem('loaderShown')) { document.documentElement.classList.add('loader-already-shown'); } })();
+    </script>
+    <!-- Loading screen (from Uiverse.io by ashish-yadv) -->
+    <div class="page-loader" id="page-loader" aria-hidden="true">
+        <ul class="loader">
+            <li class="ball"></li>
+            <li class="ball"></li>
+            <li class="ball"></li>
+        </ul>
+    </div>
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
             <a href="index.html" class="nav-logo">Portfolio</a>
@@ -33,26 +44,118 @@
     <main class="main page-content">
         <section class="projects-section">
             <h1 class="reveal">Projects & Experience</h1>
-            <p class="section-intro reveal reveal-delay-1">Selected projects built with HTML, CSS, and JavaScript.</p>
+            <p class="section-intro reveal reveal-delay-1">Selected projects I’ve worked on.</p>
 
             <article class="project-card reveal reveal-delay-2">
-                <h2>Personal Portfolio Website</h2>
-                <p>A multi-page portfolio site showcasing education, skills, and projects. Built with semantic HTML5, external CSS for responsive layout and theme support, and vanilla JavaScript for form validation and theme toggle. Fully responsive for desktop and mobile.</p>
-                <div class="project-tools">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
+                <div class="project-body">
+                    <div class="project-content">
+                        <h2>VisionGuard51: AI‑Powered Neural Sentinel Turret</h2>
+                        <p>An AI-powered autonomous security turret capable of real-time human detection, face recognition, and automated targeting. Built using computer vision (YOLOv8, DeepFace) and embedded systems (Arduino), the system can track, classify, and respond to threats with both autonomous and manual control modes. Integrated with a Flask web dashboard and Telegram alerts for remote monitoring and control.</p>
+                        <div class="project-tools">
+                            <span>Python</span>
+                            <span>OpenCV</span>
+                            <span>YOLOv8</span>
+                            <span>DeepFace</span>
+                            <span>Arduino</span>
+                            <span>Embedded Systems</span>
+                            <span>Computer Vision</span>
+                            <span>Flask</span>
+                            <span>IoT</span>
+                        </div>
+                    </div>
+                    <figure class="project-media project-media--double">
+                        <img src="images/projects/vision1.jpg" alt="VisionGuard51 hardware image" loading="lazy">
+                        <img src="images/projects/vision2.jpg" alt="VisionGuard51 software image" loading="lazy">
+                    </figure>
                 </div>
             </article>
 
             <article class="project-card reveal reveal-delay-3">
-                <h2>Task Manager Web App</h2>
-                <p>A simple task list application where users can add, complete, and remove tasks. Data is stored in the browser using localStorage. The UI includes clear feedback and works on different screen sizes.</p>
-                <div class="project-tools">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>LocalStorage</span>
+                <div class="project-body project-body--sfml">
+                    <div class="project-content">
+                        <h2>PONG QUEST (SFML Based C++ Game)</h2>
+                        <p>A classic paddle-and-ball arcade game built from scratch in C++ with SFML. Includes a menu flow (Play / Credits / Exit), live HUD (score, level, highest score), level progression (ball speed increases every 5 points), audio (music + game-over sound), and high-score persistence using a local text file.</p>
+                        <div class="project-tools">
+                            <span>C++17</span>
+                            <span>SFML 2.x</span>
+                            <span>Game Dev</span>
+                            <span>Graphics</span>
+                            <span>File I/O</span>
+                        </div>
+                    </div>
+                    <div class="project-media-stack">
+                        <figure class="project-media">
+                            <img src="images/projects/sfml1.png" alt="PONG QUEST gameplay image 1" loading="lazy">
+                        </figure>
+                        <figure class="project-media">
+                            <img src="images/projects/sfml2.png" alt="PONG QUEST gameplay image 2" loading="lazy">
+                        </figure>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-4">
+                <div class="project-body">
+                    <div class="project-content">
+                        <h2>Personal Portfolio Website</h2>
+                        <p>A multi-page portfolio site showcasing education, skills, and projects. Built with semantic HTML5, external CSS for responsive layout and theme support, and vanilla JavaScript for form validation and theme toggle. Fully responsive for desktop and mobile.</p>
+                        <div class="project-tools">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                    <figure class="project-media">
+                        <img src="images/projects/portfolio site.png" alt="Personal Portfolio Website project image" loading="lazy">
+                    </figure>
+                </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-5">
+                <div class="project-body">
+                    <div class="project-content">
+                        <h2>Romantic Surprise Website (Interactive Love Note)</h2>
+                        <p>A heartfelt surprise microsite with a two-round heart-catching mini-game that unlocks a personal message. Includes animated hearts, celebration effects, a “reasons why I love you” section, a hug popup moment, and optional background music.</p>
+                        <div class="project-tools">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Animations</span>
+                            <span>Web Audio</span>
+                        </div>
+                    </div>
+                    <figure class="project-media">
+                        <img src="images/projects/surprise-girlfriend.png" alt="Romantic Surprise Website screenshot" loading="lazy">
+                    </figure>
+                </div>
+            </article>
+
+            <article class="project-card reveal reveal-delay-7">
+                <div class="project-body">
+                    <div class="project-content">
+                        <h2>Build log (updating)</h2>
+                        <p>This page is a snapshot—my newest work changes fast. Here’s what I’m actively building right now.</p>
+
+                        <details class="project-log">
+                            <summary>What I’m working on next</summary>
+                            <ul class="project-highlights">
+                                <li>Developing a danger alert app with dynamic features</li>
+                                <li>Upgrading this portfolio with smoother animations and better mobile layout</li>
+                                <li>Adding short case studies (problem → solution → results)</li>
+                            </ul>
+                        </details>
+
+                        <div class="project-tools">
+                            <span>In progress</span>
+                            <span>Weekly updates</span>
+                            <span>2026</span>
+                        </div>
+
+                        <div class="project-actions" aria-label="More project links">
+                            <a class="btn btn-primary" href="https://github.com/rik-byte-shifter" target="_blank" rel="noopener noreferrer">View GitHub</a>
+                            <a class="btn btn-secondary" href="contact.html">Let’s collaborate</a>
+                        </div>
+                    </div>
                 </div>
             </article>
         </section>

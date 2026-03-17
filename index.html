@@ -10,6 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <script>
+    (function(){ if (sessionStorage.getItem('loaderShown')) { document.documentElement.classList.add('loader-already-shown'); } })();
+    </script>
+    <!-- Loading screen (from Uiverse.io by ashish-yadv) -->
+    <div class="page-loader" id="page-loader" aria-hidden="true">
+        <ul class="loader">
+            <li class="ball"></li>
+            <li class="ball"></li>
+            <li class="ball"></li>
+        </ul>
+    </div>
     <header class="site-header">
         <nav class="nav" aria-label="Main navigation">
             <a href="index.html" class="nav-logo">Portfolio</a>
@@ -48,6 +59,20 @@
                         </span>
                     </p>
                     <p class="hero-welcome">Welcome to my portfolio. Here you'll find my projects, skills, and journey in web development. Explore and get in touch.</p>
+                    <nav class="hero-social" aria-label="Social links">
+                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="LinkedIn">
+                            <img src="images/social/linkedin.png" alt="" class="hero-social-icon" width="24" height="24">
+                        </a>
+                        <a href="https://github.com/rik-byte-shifter" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="GitHub">
+                            <img src="images/social/github.png" alt="" class="hero-social-icon" width="24" height="24">
+                        </a>
+                        <a href="https://www.facebook.com/rik.das.078/" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Facebook">
+                            <img src="images/social/facebook.png" alt="" class="hero-social-icon" width="24" height="24">
+                        </a>
+                        <a href="https://www.instagram.com/rik_blue/" target="_blank" rel="noopener noreferrer" class="hero-social-link" aria-label="Instagram">
+                            <img src="images/social/instagram.png" alt="" class="hero-social-icon" width="24" height="24">
+                        </a>
+                    </nav>
                     <div class="hero-cta">
                         <a href="about.html" class="btn btn-primary">About Me</a>
                         <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
