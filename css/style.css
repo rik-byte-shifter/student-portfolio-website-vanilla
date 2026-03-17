@@ -1123,6 +1123,11 @@ body::before {
     background: transparent;
 }
 
+/* Extra spacing between the three Skills section titles */
+.skills-subtitle:not(:first-of-type) {
+    margin-top: 4.25rem;
+}
+
 .skills-subtitle::before,
 .skills-subtitle::after {
     content: '';
