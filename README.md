@@ -1,6 +1,6 @@
 <div align="center">
 
-# ** Student Portfolio Website **
+#  Student Portfolio Website 
 
 **—** *A modern, responsive multi-page portfolio built with vanilla HTML5, CSS3, and JavaScript* **—**
 
@@ -131,7 +131,7 @@ Student_Portfolio_Website/
 
 ## 📜 License
 
-This project is open source. Use and modify it for your own portfolio; attribution is appreciated but not required.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 ---
 
