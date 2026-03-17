@@ -997,8 +997,13 @@ body::before {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) auto minmax(0, 1.4fr);
     gap: 1.5rem;
-    align-items: flex-start;
+    align-items: stretch;
     margin-top: 0.5rem;
+}
+
+.about-profile-left,
+.about-profile-right {
+    height: 100%;
 }
 
 .about-profile-left p {
@@ -1020,6 +1025,13 @@ body::before {
 .about-profile-right p {
     margin: 0 0 0.5rem;
     color: var(--text-muted);
+}
+
+.highlight-gradient-red {
+    background: linear-gradient(120deg, #ff4b5c, #ff6a3d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .about-timeline {
