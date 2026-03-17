@@ -1,6 +1,6 @@
 <div align="center">
 
-# **✨ Student Portfolio Website ✨**
+# ** Student Portfolio Website **
 
 **—** *A modern, responsive multi-page portfolio built with vanilla HTML5, CSS3, and JavaScript* **—**
 
@@ -9,7 +9,7 @@
 </div>
 
 <p align="center">
-  <img src="screenshot.png" alt="Portfolio website preview" width="800">
+  <img src="images/ss.png" alt="Portfolio website preview" width="800">
 </p>
 
 ---
