@@ -1,11 +1,15 @@
-# ✨ Student Portfolio Website
+<div align="center">
+
+# **✨ Student Portfolio Website ✨**
+
+**—** *A modern, responsive multi-page portfolio built with vanilla HTML5, CSS3, and JavaScript* **—**
+
+*No frameworks · No build step · Just clean, semantic markup*
+
+</div>
 
 <p align="center">
-  <strong>A modern, responsive multi-page portfolio built with vanilla HTML5, CSS3, and JavaScript.</strong>
-</p>
-
-<p align="center">
-  No frameworks. No build step. Just clean, semantic markup and a polished experience.
+  <img src="screenshot.png" alt="Portfolio website preview" width="800">
 </p>
 
 ---
