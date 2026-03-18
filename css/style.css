@@ -2036,6 +2036,55 @@ a.contact-info-value:hover {
     .contact-left {
         max-width: none;
     }
+
+    /* Center Contact Info + Follow me on phone (desktop stays right-aligned in sidebar) */
+    .contact-right {
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 100%;
+        padding-bottom: 0.5rem;
+    }
+
+    .contact-right .contact-info-block,
+    .contact-right .follow-me-block {
+        width: 100%;
+        max-width: 22rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-right .contact-info-list {
+        align-items: center;
+        width: 100%;
+    }
+
+    .contact-right .contact-info-item {
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-right .contact-info-value {
+        word-break: break-word;
+        max-width: 100%;
+    }
+
+    .contact-right .social-links {
+        justify-content: center;
+    }
+
+    .contact-right .contact-side-heading::after {
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3rem;
+        background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    }
 }
 
 /* ===== Contact form ===== */
