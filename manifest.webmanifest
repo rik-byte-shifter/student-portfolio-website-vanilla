@@ -1,7 +1,7 @@
 {
   "name": "Ranesh Das Rik — Portfolio",
   "short_name": "Portfolio",
-  "description": "Student portfolio — projects, skills, and contact.",
+  "description": "Portfolio — projects, skills, and contact.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
