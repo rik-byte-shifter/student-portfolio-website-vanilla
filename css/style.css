@@ -1700,14 +1700,6 @@ body::before {
     background: var(--bg-elevated);
 }
 
-@media (max-width: 420px) {
-    .project-media--double {
-        grid-template-columns: 1fr;
-        width: 100%;
-        height: 190px;
-    }
-}
-
 /* Image polish (all project thumbnails) */
 .project-media img,
 .project-media--double img {
@@ -1805,8 +1797,42 @@ body::before {
 }
 
 @media (max-width: 700px) {
+    .main {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
     .project-body {
         flex-direction: column;
+    }
+
+    /* VisionGuard51: wider row + room to grow; overflow visible so scaled content isn’t clipped */
+    .projects-section .project-card:has(.project-media--double) {
+        padding-left: 0.65rem;
+        padding-right: 0.65rem;
+        overflow: visible;
+    }
+
+    .project-media--double {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 0;
+        flex: 1 1 auto;
+        align-self: stretch;
+        align-items: start;
+        gap: 6px;
+        padding: 6px;
+        overflow: visible;
+    }
+
+    .project-media--double img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
+        aspect-ratio: auto;
     }
 
     .project-media-stack {
@@ -1820,7 +1846,8 @@ body::before {
         flex-direction: row;
     }
 
-    .project-media {
+    /* Don’t apply fixed height to VisionGuard51 double figure — it was cropping images */
+    .project-media:not(.project-media--double) {
         width: 100%;
         max-width: 520px;
         height: 190px;
@@ -1841,6 +1868,19 @@ body::before {
     .project-media--sfml {
         width: 100%;
         height: 220px;
+    }
+}
+
+/* Narrow phones: squeeze margins a bit more so both VisionGuard images stay larger side-by-side */
+@media (max-width: 420px) {
+    .projects-section .project-card:has(.project-media--double) {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    .project-media--double {
+        gap: 4px;
+        padding: 4px;
     }
 }
 
