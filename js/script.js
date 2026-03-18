@@ -4,6 +4,15 @@
     var THEME_KEY = 'portfolio-theme';
     var EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // ----- PWA: service worker registration -----
+    function initServiceWorker() {
+        if (!('serviceWorker' in navigator)) return;
+        // Only works on https (or localhost). Fail silently.
+        window.addEventListener('load', function () {
+            navigator.serviceWorker.register('./sw.js').catch(function () {});
+        });
+    }
+
     // ----- Theme toggle -----
     function getStoredTheme() {
         try {
@@ -394,4 +403,5 @@
     initRipples();
     initScrollTop();
     initHeroRoleRotator();
+    initServiceWorker();
 })();
