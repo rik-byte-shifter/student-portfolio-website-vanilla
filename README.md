@@ -148,7 +148,7 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
 **Ranesh Das Rik**
 
 - GitHub: [@rik-byte-shifter](https://github.com/rik-byte-shifter)
-- LinkedIn: [yourprofile](https://www.linkedin.com/in/yourprofile)
+- LinkedIn: [Ranesh Das Rik](https://www.linkedin.com/in/ranesh-das-rik)
 - Portfolio: This site
 
 ---
