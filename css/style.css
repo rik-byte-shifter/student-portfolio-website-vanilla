@@ -2702,3 +2702,129 @@ a.contact-info-value:hover {
         font-size: 0.85rem;
     }
 }
+
+/* ===== Custom interactive cursor (pointer devices only) ===== */
+html.has-custom-cursor,
+html.has-custom-cursor * {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.custom-cursor.is-visible {
+    opacity: 1;
+}
+
+.custom-cursor__dot,
+.custom-cursor__ring,
+.custom-cursor__ripple {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    will-change: transform;
+}
+
+.custom-cursor__dot {
+    --cursor-x: 0px;
+    --cursor-y: 0px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow:
+        0 0 8px var(--accent-glow),
+        0 0 20px var(--accent-glow),
+        0 0 36px rgba(0, 229, 184, 0.25);
+    transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%);
+    transition: transform 0.12s ease-out, width 0.3s ease, height 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3;
+}
+
+.custom-cursor__ring {
+    --cursor-x: 0px;
+    --cursor-y: 0px;
+    --ring-size: 40px;
+    width: var(--ring-size);
+    height: var(--ring-size);
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    background: transparent;
+    box-shadow: 0 0 24px rgba(0, 229, 184, 0.12);
+    transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%);
+    transition:
+        width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        height 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        border-width 0.35s ease,
+        border-radius 0.35s ease,
+        opacity 0.35s ease,
+        box-shadow 0.35s ease;
+    z-index: 2;
+}
+
+.custom-cursor.is-hovering .custom-cursor__ring {
+    --ring-size: 58px;
+    border-width: 1.5px;
+    box-shadow: 0 0 32px rgba(0, 229, 184, 0.22);
+}
+
+.custom-cursor.is-hovering .custom-cursor__dot {
+    width: 6px;
+    height: 6px;
+    box-shadow:
+        0 0 10px var(--accent-glow),
+        0 0 28px var(--accent-glow);
+}
+
+.custom-cursor.is-clicking .custom-cursor__ring {
+    --ring-size: 22px;
+    border-width: 2.5px;
+}
+
+.custom-cursor.is-clicking .custom-cursor__dot {
+    transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%) scale(0.65);
+}
+
+.custom-cursor.is-text .custom-cursor__ring {
+    --ring-size: 4px;
+    width: 28px;
+    height: 28px;
+    border-width: 0;
+    border-radius: 2px;
+    background: rgba(0, 229, 184, 0.35);
+    box-shadow: none;
+    opacity: 0.7;
+}
+
+.custom-cursor.is-text .custom-cursor__dot {
+    width: 2px;
+    height: 18px;
+    border-radius: 1px;
+}
+
+.custom-cursor__ripple {
+    --cursor-x: 0px;
+    --cursor-y: 0px;
+    width: 40px;
+    height: 40px;
+    border: 1.5px solid var(--accent);
+    border-radius: 50%;
+    opacity: 0.7;
+    transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%) scale(0.4);
+    animation: cursorRipple 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    z-index: 1;
+}
+
+@keyframes cursorRipple {
+    to {
+        transform: translate3d(var(--cursor-x), var(--cursor-y), 0) translate(-50%, -50%) scale(2.2);
+        opacity: 0;
+    }
+}

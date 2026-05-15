@@ -393,6 +393,135 @@
         setTimeout(typeWriter, 1200);
     }
 
+    // ----- Custom interactive cursor -----
+    function initCustomCursor() {
+        if (!window.matchMedia('(pointer: fine)').matches) return;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        var INTERACTIVE =
+            'a, button, input, textarea, select, label, summary, ' +
+            '.btn, .nav-toggle, .theme-toggle, .scroll-top, ' +
+            '.project-card, .tool-card, .skill-item, ' +
+            '.hero-social-link, .social-link, .nav-menu a, ' +
+            '[role="button"], [data-cursor-hover]';
+
+        var TEXT_INPUT =
+            'input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="file"]), textarea';
+
+        document.documentElement.classList.add('has-custom-cursor');
+
+        var cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        cursor.setAttribute('aria-hidden', 'true');
+        cursor.innerHTML =
+            '<div class="custom-cursor__ring"></div>' +
+            '<div class="custom-cursor__dot"></div>';
+        document.body.appendChild(cursor);
+
+        var dot = cursor.querySelector('.custom-cursor__dot');
+        var ring = cursor.querySelector('.custom-cursor__ring');
+
+        var mouseX = window.innerWidth / 2;
+        var mouseY = window.innerHeight / 2;
+        var ringX = mouseX;
+        var ringY = mouseY;
+        var dotX = mouseX;
+        var dotY = mouseY;
+        var visible = false;
+        var rafId = 0;
+
+        function lerp(a, b, t) {
+            return a + (b - a) * t;
+        }
+
+        function setPos(el, x, y) {
+            el.style.setProperty('--cursor-x', x + 'px');
+            el.style.setProperty('--cursor-y', y + 'px');
+        }
+
+        function spawnClickRipple(x, y) {
+            var ripple = document.createElement('div');
+            ripple.className = 'custom-cursor__ripple';
+            ripple.style.setProperty('--cursor-x', x + 'px');
+            ripple.style.setProperty('--cursor-y', y + 'px');
+            cursor.appendChild(ripple);
+            ripple.addEventListener('animationend', function () {
+                ripple.remove();
+            });
+        }
+
+        function updateHoverState(clientX, clientY) {
+            var el = document.elementFromPoint(clientX, clientY);
+            var target = el && el.closest(INTERACTIVE);
+            var textTarget = el && el.closest(TEXT_INPUT);
+            cursor.classList.toggle('is-hovering', !!target && !textTarget);
+            cursor.classList.toggle('is-text', !!textTarget);
+            return target;
+        }
+
+        function onMouseMove(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+
+            if (!visible) {
+                visible = true;
+                cursor.classList.add('is-visible');
+                ringX = mouseX;
+                ringY = mouseY;
+                dotX = mouseX;
+                dotY = mouseY;
+            }
+
+            var hoverTarget = updateHoverState(mouseX, mouseY);
+            if (hoverTarget && !cursor.classList.contains('is-text')) {
+                var rect = hoverTarget.getBoundingClientRect();
+                var cx = rect.left + rect.width * 0.5;
+                var cy = rect.top + rect.height * 0.5;
+                dotX = lerp(mouseX, cx, 0.18);
+                dotY = lerp(mouseY, cy, 0.18);
+            } else {
+                dotX = mouseX;
+                dotY = mouseY;
+            }
+
+            setPos(dot, dotX, dotY);
+        }
+
+        function tick() {
+            var ringSpeed = cursor.classList.contains('is-clicking') ? 0.28 : 0.14;
+            ringX = lerp(ringX, mouseX, ringSpeed);
+            ringY = lerp(ringY, mouseY, ringSpeed);
+            setPos(ring, ringX, ringY);
+            rafId = requestAnimationFrame(tick);
+        }
+
+        document.addEventListener('mousemove', onMouseMove, { passive: true });
+
+        document.documentElement.addEventListener('mouseleave', function () {
+            cursor.classList.remove('is-visible');
+            visible = false;
+        });
+
+        document.documentElement.addEventListener('mouseenter', function () {
+            if (visible) cursor.classList.add('is-visible');
+        });
+
+        document.addEventListener('mousedown', function () {
+            cursor.classList.add('is-clicking');
+            spawnClickRipple(mouseX, mouseY);
+        });
+
+        document.addEventListener('mouseup', function () {
+            cursor.classList.remove('is-clicking');
+        });
+
+        rafId = requestAnimationFrame(tick);
+
+        window.addEventListener('beforeunload', function () {
+            cancelAnimationFrame(rafId);
+        });
+    }
+
     // ----- Run all -----
     initTheme();
     initNavToggle();
@@ -404,4 +533,5 @@
     initScrollTop();
     initHeroRoleRotator();
     initServiceWorker();
+    initCustomCursor();
 })();
